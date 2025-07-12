@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card, Rate, Typography, Divider, List, Avatar, Space, Button, Modal, Form, Input, message, Tag, Descriptions, Select } from 'antd';
-const { Option } = Select;
 import { StarOutlined, UserOutlined, PhoneOutlined, EnvironmentOutlined, ClockCircleOutlined } from '@ant-design/icons';
+
+const { Option } = Select;
 
 const { Title, Text, Paragraph } = Typography;
 const { TextArea } = Input;
