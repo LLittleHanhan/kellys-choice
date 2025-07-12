@@ -25,7 +25,7 @@ public class Review {
     private User user;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", nullable = false)
+    @JoinColumn(name = "cleaning_company_id", nullable = false)
     private CleaningCompany cleaningCompany;
     
     @Column(nullable = false)

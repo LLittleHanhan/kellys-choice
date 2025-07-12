@@ -36,6 +36,9 @@ public class User {
     @Column(length = 20)
     private String phone;
     
+    @Column(length = 20, nullable = false)
+    private String role = "USER"; // USER, ADMIN
+    
     @Column(nullable = false)
     private Integer status = 1; // 1:正常 0:禁用
     
