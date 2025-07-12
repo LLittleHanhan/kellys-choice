@@ -98,11 +98,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- JSON -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
+
 
         <!-- Lombok -->
         <dependency>
