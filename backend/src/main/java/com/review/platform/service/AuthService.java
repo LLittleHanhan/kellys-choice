@@ -61,4 +61,3 @@ public class AuthService {
         return userRepository.findByUsername(username);
     }
 } 
-} 
