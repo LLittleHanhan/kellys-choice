@@ -11,6 +11,9 @@ RUN npm install
 # 复制源代码
 COPY . .
 
+# 调试：列出文件
+RUN ls -la src/
+
 # 构建应用
 RUN npm run build
 
