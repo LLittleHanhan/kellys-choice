@@ -1,0 +1,75 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: review-platform
+  
+  profiles:
+    active: dev
+  
+  datasource:
+    url: jdbc:mysql://localhost:3306/review_platform?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: review_user
+    password: review123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123456
+    
+  elasticsearch:
+    uris: http://localhost:9200
+    
+# JWT配置
+jwt:
+  secret: your-secret-key-here-make-it-long-and-secure
+  expiration: 86400000 # 24小时
+
+# 文件上传配置
+file:
+  upload:
+    path: /app/uploads/
+    max-size: 10MB
+
+# 管理端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# 日志配置
+logging:
+  level:
+    com.review.platform: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" 
